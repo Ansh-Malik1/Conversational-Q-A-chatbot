@@ -18,7 +18,8 @@ import streamlit as st
 
 load_dotenv()
 
-os.environ["HUGGINFACE_TOKEN"]=os.getenv("HUGGINGFACE_API")
+os.environ["HUGGINFACE_TOKEN"]=os.get("HUGGINGFACE_API")
+
 
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-l6-v2")
 
@@ -26,7 +27,7 @@ embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-l6-v2")
 st.title("Conversational RAG with PDF uploads and chat history")
 st.write("Upload PDF and chat with their content")
 
-api_key=os.getenv("GROQ_API_KEY")
+api_key=os.get("GROQ_API_KEY")
 
 if api_key:
     llm=ChatGroq(api_key=api_key,model="Gemma2-9b-It")
