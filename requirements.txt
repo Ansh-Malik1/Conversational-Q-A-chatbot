@@ -5,4 +5,4 @@ langchain
 langchain_groq
 langchain_huggingface
 langchain_text_splitters
-dotenv
+python-dotenv
